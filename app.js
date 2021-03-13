@@ -6,7 +6,12 @@ button.addEventListener('click', () => {
 })
 
 popUpWrapper.addEventListener('click', event => {
-  const classListElement = event.target.classList
-  console.log(classListElement);
+  const classListElement = event.target.classList[0];
+  const classNames = ['popup-close','popup-wrapper','moreInfo']
+  const includesClassNames = classNames.some(className => className === classListElement) 
+
+  if(includesClassNames){
+    popUpWrapper.style.display = 'none'
+  }
 })
 
